@@ -1,0 +1,4 @@
+az group create
+az appservice plan create
+az webapp create
+az webapp deployment source config
