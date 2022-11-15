@@ -1,0 +1,10 @@
+az configure --defaults web=website group=website
+
+az appservice plan create --name websitePlan 
+                          --skuB1 
+                          --is-Linux
+
+az webapp create --plan websitePlan
+                 --deployment-container-image-name images.azurecr.io/website v1.0.0
+             
+az webapp config container set --docker-registry-server-url https://images.azurecr.io -u admin -p admin
