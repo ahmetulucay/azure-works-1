@@ -1,0 +1,13 @@
+az eventgrid topic create
+   --name <event topic name>
+   --location <location>
+   --resource-group <resource group name>
+
+
+az eventgrid event-subcription create
+   --name <event subcription name>
+   --resource-group <resource group name>
+   --topic-name <topic name>
+   --subject-ends-with engineering
+   --included-event-type employeeAdded
+   --endpoint <function endpoint>
