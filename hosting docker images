@@ -1,0 +1,4 @@
+Step 1: #bin/bash -
+Step 2 -az webapp create
+Step 3 -az webapp config container set
+Step 4- az webapp config hostname
