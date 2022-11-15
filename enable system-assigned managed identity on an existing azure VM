@@ -1,0 +1,8 @@
+$vm = Get-AzVM 
+      -ResourceGroupName {resource group} 
+      -Name myVM
+      
+Update-AzVM 
+      -ResourceGroupName {resource group} 
+      -VM $vm 
+      -IdentityType SystemAssigned
