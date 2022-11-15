@@ -1,0 +1,4 @@
+az servicebus queue create 
+    --resource-group ContosoRG
+    --namespace-name ContosoSBusNS
+    --name ContosoOrderQueue
