@@ -1,0 +1,7 @@
+//azcopy copy [source] [destination] [flags]
+
+//azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/?sv=2018-03-28&ss=bjqt&srt=sco&sp=rwddgcup&se=2019-05-01T05:01:17Z&st=2019-04-30T21:01:17Z&spr=https&sig=MGCXiyEzbtttkr3ewJIh2AR8KrghSy1DGM9ovN734bQF4%3D" --recursive=true
+
+azcopy cp "D:\qlabs"
+          "https://qlabstore2022.blob.core.windows.net/qtest/?sv=2022-11-01&ss=bjqt&srt=sco&sp=rwddgcup&se=2022-10-30T05:01:17Z&st=2022-10-30T21:01:17Z&spr=https&sig=XGCXiyYzbtxtkr5ewJKh4AR8JrghTy1DHM9ovQ734bTF4%3A" 
+          --recursive=true
