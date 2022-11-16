@@ -1,0 +1,24 @@
+//az webapp log config 
+                      --name MyWebapp 
+                      --resource-group MyResourceGroup 
+                      --web-server-logging off
+                      --docker-container-logging filesystem
+
+//az webapp log tail [--ids]
+                     [--name]
+                     [--provider]
+                     [--resource-group]
+                     [--slot]
+                     
+   
+   
+Example=
+
+az webapp log config 
+                     --name qlabwebapp 
+                     --resource-group qlab-rg 
+                     --docker-container-logging filesystem 
+
+az webapp log tail   
+                     --name qlabwebapp
+                     --resource-group qlab-rg
