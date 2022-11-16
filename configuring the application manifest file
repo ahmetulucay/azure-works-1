@@ -1,0 +1,16 @@
+//Enable group membership claims by changing groupMembershipClaims attribute.
+  "groupMembershipClaims": "SecurityGroup"
+  
+//oauth2AllowImplicitFlow attribute
+
+
+{
+...
+
+"appId" :"55y8aba4-4b22-57d1-9932-db3524k086n0"
+
+“groupMembershipClaims”   : "All",
+
+"oauth2AllowImplicitFlow" : true
+
+}
