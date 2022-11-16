@@ -1,0 +1,14 @@
+function HolidayTip() {
+    var r = getContext().getRequest();
+
+    // item to be created in the current operation
+    var it = r.getBody();
+
+    // validate properties
+    if (!("holidaytip" in it)) {
+        it[tip]=0;
+    }
+
+    // update the item that will be created
+    r.setBody(it);
+}
