@@ -1,0 +1,23 @@
+public static async Task SetBlobPropertiesAsync(CloudBlob blob)
+{
+    try
+    {
+        Console.WriteLine("Setting Blob Properties ...");
+
+        // Explicitly set the MIME ContentType every time the  
+        // properties are updated or the field will be cleared
+           blob.Properties.ContentType = "text/plain";
+           blob.Properties.ContentLanguage = "en-us";
+      
+        // Set the Blob's Properties
+           await blob.SetPropertiesAsync();
+    }
+    catch (StorageException e)
+    {
+        Console.WriteLine("HTTP error code {0}: {1}",
+                          e.RequestInformation.HttpStatusCode,
+                          e.RequestInformation.ErrorCode);
+        Console.WriteLine(e.Message);
+        Console.ReadLine();
+    }
+}
