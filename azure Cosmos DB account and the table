@@ -1,0 +1,15 @@
+az cosmosdb create \
+    -n $qlabaccountName \            // {accountName}
+    -g $qlabs-rg \                   // {resouceGroupName}
+    --capabilities EnableTable \
+    --default-consistency-level Eventual \
+    --locations regionName='West US' failoverPriority=0 isZoneRedundant=False \
+    --locations regionName='East US' failoverPriority=1 isZoneRedundant=False
+
+
+
+az cosmosdb table create \
+    -a $qlabaccountName \            // {accountName}
+    -g $qlabs-rg \                   // {resouceGroupName}
+    -n $Name \                       // {tableName}
+    --throughput 400
