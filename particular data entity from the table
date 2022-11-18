@@ -1,0 +1,23 @@
+class Customer : TableEntity
+{
+
+    public Customer(String Region, string Phone, string Email)
+    
+    {
+        this.PartitionKey = Region;
+        
+        this.RowKey = Email;
+    }
+    
+    public Customer(){}
+    
+}
+
+private static void ReadCustomer_keys(CloudTable qlabs_table, string p_partitionkey, string p_rowkey)
+
+{
+      TableOperation query = TableOperation.Retrieve(p_partitionkey, p_rowkey);
+      
+      TableResult result = qlabs_table.Execute(retrieve);
+
+}
