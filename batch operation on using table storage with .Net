@@ -1,0 +1,25 @@
+private static void InsertBatch()
+
+   {
+      CloudStorageAccount qlabs_storage = CloudStorageAccount.Parse(conn_strign);
+      CloudTableClient qlabs_table_client = qlabs_storage.CreateCloudTableClient();
+      CloudTable qlabs_table = qlabs_table_client.GetTableReference("Customer");
+      
+      TableBatchOperation qlabs_batch = new TableBatchOperation
+      
+      Customer customer_obj1 = new Customer (2, "Kelly");
+      customer_obj1.Email = "kelly@qlabs.com";
+      
+      Customer customer_obj2 = new Customer (2, "Jack");
+      customer_obj2.Email = "jack@qlabs.com";
+      
+      qlabs_batch.Insert(customer_obj1);
+      qlabs_batch.Insert(customer_obj2);
+      
+      qlabs_table.ExecuteBatch(qlabs_batch);
+      
+      Console.WriteLine("Records Inserted");
+      
+      Console.ReadKey();
+   
+   }
