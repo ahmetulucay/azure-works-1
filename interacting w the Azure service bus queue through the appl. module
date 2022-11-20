@@ -1,0 +1,26 @@
+
+
+const string qlabServiceBusConnectionString = "...";
+const string QueueName = "qlabqueue";
+static IQueueClient qlabqueueClient;
+static async Task SideSync()
+
+{
+   qlabqueueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+   await SendMessagesAsync(numberOfMessages);
+   await queueClient.CloseAysnc();
+}
+
+static async Task SendMessagesAsync(string messageBody)
+
+{
+   try
+   {
+      var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+      await queueClient.SendAysnc(message);
+   }
+   catch (Exception qlabexception)
+   {
+      Console.WriteLine($"{DateTime.Now} :: Exception: {qlabexception.Message}");
+   }
+}
