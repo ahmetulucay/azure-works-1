@@ -1,0 +1,22 @@
+class qCustomer
+{
+   public string Id {get; set;}
+   public string Name {get; set;}
+   
+   public Employee(string qID, string qName)
+   {
+       this.Id = qId;
+       this.Name = qName;
+   }
+}
+
+// Storing the object in cache
+
+   qCustomer obj = new qCustomer("1", "Quqo");
+   
+   cache.StringSet("q001", JsonConvert.SerializeObject(obj)));
+   
+// Retrieving the object from the cache
+
+   qCustomer objcache = JsonConvert.DeserializeObject<qCustomer>(cache.StringGet("q001"));
+   
