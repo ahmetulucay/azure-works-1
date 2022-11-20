@@ -1,0 +1,9 @@
+TableQuery<CustomerEntity> rangeQuery = new TableQuery<CustomerEntity>().Where(
+
+    TableQuery.CombineFilters(
+    
+         TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Kelly"),
+    
+         TableOperators.And,
+         
+         TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, "Coles@qlabs.com")));
