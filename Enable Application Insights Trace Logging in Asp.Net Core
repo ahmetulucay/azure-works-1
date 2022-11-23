@@ -1,0 +1,26 @@
+
+public void ConfigurationServices(IServiceCollection services)
+
+{
+
+   services
+   
+      .AddOptions<ApplicationInsightsLoggerOptions>()
+   
+      .Configure(o => o.IncludeEventId = true);
+      
+   services.AddMvc();
+
+}
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+
+{
+
+    LogLevel logLevel = LogLevel.Warning;
+    
+    loggerFactory.AddApplicationInsights(app.ApplicationServices, logLevel);
+    
+    app.useMvc();
+    
+}
