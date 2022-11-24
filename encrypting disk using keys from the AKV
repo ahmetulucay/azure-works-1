@@ -1,0 +1,20 @@
+
+$rgName = "qlabs-rg"
+$location = "East US"
+ 
+ Register-AzResourceProvider -ProviderNamespace "Microsoft.KeyVault"
+ 
+ New-AzResourceGroup -Location $location -Name $rgName
+
+ $keyVaultName = "qlabsKeyVault$(Get-Random)"
+ New-AzKeyVault -Location $location
+
+-ResourceGroupName $rgName
+-VaultName $keyVaultName
+-EnabledForDiskEncryption
+
+ Add-AzureKeyVaultKey 
+-VaultName $keyVaultName
+
+-Name "qlabsKey"
+-Destination "Software"
