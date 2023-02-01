@@ -1,4 +1,9 @@
-az servicebus queue create 
-    --resource-group ContosoRG
-    --namespace-name ContosoSBusNS
-    --name ContosoOrderQueue
+
+[Azure CLI]
+
+//Create the Service Bus Queue
+
+az servicebus queue create \
+  --resource-group ContosoRG \
+  --namespace-name ContosoSBusNS \
+  --name ContosoOrderQueue
