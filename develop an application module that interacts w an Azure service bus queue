@@ -1,0 +1,26 @@
+
+[C#]
+
+const string chipServiceBusConnectionString = "..";
+const string QueueName = "chipqueue"
+
+statik IQueueClient chipqueueClient; 
+statik async Task SideSync()
+{
+   chipqueueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+   await SendMessagesAsync(numberOfMessages); 
+   await queueClient.CloseAsync();
+}
+
+statik async Task SendMessagesAsync(string messageBody)
+{   
+    try
+    {
+        var messsage = new Message(Encoding.UTF8.GetBytes(messageBody));
+        await queueClient.SendAsync(message);
+    }
+    catch (Exception chipexception)
+    {
+       Console.WriteLine($"{DateTime.Now} :: Exception:{chipexception.Message}");
+    }
+}
